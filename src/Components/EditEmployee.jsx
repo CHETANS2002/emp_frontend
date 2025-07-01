@@ -105,7 +105,7 @@ function EditEmployee() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/employees/${id}`).then(res => {
+    axios.get(`https://emp-backend-k6jw.onrender.com/employees/${id}`).then(res => {
       setFormData(res.data);
     });
   }, [id]);
@@ -126,7 +126,7 @@ function EditEmployee() {
   const handleSubmit = e => {
     e.preventDefault();
     if (validate()) {
-      axios.put(`http://localhost:3001/employees/${id}`, formData).then(() => {
+      axios.put(`https://emp-backend-k6jw.onrender.com/employees/${id}`, formData).then(() => {
         toast.success('Employee updated successfully!');
         navigate('/');
       });
